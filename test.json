@@ -1,0 +1,42 @@
+{
+  "colorRows": [
+    [
+      {
+        "name": "primary",
+        "hex": "#0F70F0"
+      },
+      {
+        "name": "secondary",
+        "hex": "#0C5ECB"
+      }
+    ],
+    [
+      {
+        "name": "black",
+        "hex": "#000000"
+      },
+      {
+        "name": "white",
+        "hex": "#FFFFFF"
+      }
+    ],
+    [
+      {
+        "name": "Dark Gray",
+        "hex": "#767676"
+      },
+      {
+        "name": "Gray",
+        "hex": "#CCCCCC"
+      },
+      {
+        "name": "Light Gray",
+        "hex": "#EDEDED"
+      },
+      {
+        "name": "Lightest Gray",
+        "hex": "#F7F7F7"
+      }
+    ]
+  ]
+}
