@@ -1,12 +1,15 @@
+import { Color, Colors } from "./Colors/Colors";
+
 figma.showUI(__html__);
 
 figma.ui.onmessage = msg => {
   if (msg.type === 'generate') {
     const { data } = msg;
-    const { colorRows } = data;
-    console.log(data);
-    console.log('colorRows 2', colorRows);
+    const { colorRows }: { colorRows: Array<Array<Color>>} = data;
+    if (colorRows && colorRows.length) {
+      Colors.init(colorRows);
+    }
   }
 
-  figma.closePlugin();
+  // figma.closePlugin();
 };

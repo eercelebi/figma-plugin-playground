@@ -2,21 +2,21 @@
   "colorRows": [
     [
       {
-        "name": "primary",
+        "name": "Primary",
         "hex": "#0F70F0"
       },
       {
-        "name": "secondary",
+        "name": "Secondary",
         "hex": "#0C5ECB"
       }
     ],
     [
       {
-        "name": "black",
+        "name": "Black",
         "hex": "#000000"
       },
       {
-        "name": "white",
+        "name": "White",
         "hex": "#FFFFFF"
       }
     ],
