@@ -58,7 +58,6 @@ export class Colors {
       const row = figma.createFrame();
 
       let rowHeight = 0;
-      let rowWidth = 0;
       let rowItemCount = 0;
       for (const color of colorRow) {
         const component = this.buildColorComponent(color);
@@ -67,16 +66,19 @@ export class Colors {
           row.appendChild(component);
           component.x = rowItemCount * (component.width + this._colorCommponentMarginRight);
           rowItemCount++;
-          rowWidth += component.width + this._colorCommponentMarginRight;
         }
       }
-      row.resize(rowWidth, rowHeight);
+      row.layoutMode = 'HORIZONTAL';
+      row.counterAxisSizingMode = 'AUTO';
+      row.itemSpacing = this._colorCommponentMarginRight;
 
       this._colorsFrame.appendChild(row);
       row.y = frameHeight;
       frameHeight += rowHeight + this._colorRowMarginBottom;
     }
-    this._colorsFrame.resize(1000, frameHeight);
+    this._colorsFrame.layoutMode = 'VERTICAL';
+    this._colorsFrame.counterAxisSizingMode = 'AUTO';
+    this._colorsFrame.itemSpacing = this._colorRowMarginBottom;
   }
 
   /**
