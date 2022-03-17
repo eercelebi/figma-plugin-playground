@@ -3,7 +3,6 @@ import './ui.css';
 document.getElementById('generate').onclick = () => {
   const input = <HTMLInputElement>document.getElementById('json-input');
   const error = <HTMLElement>document.querySelector('.error');
-  let data;
   try {
     const data = JSON.parse(input.value);
     error.style.visibility = 'hidden';
@@ -11,7 +10,6 @@ document.getElementById('generate').onclick = () => {
   } catch(err) {
     error.style.visibility = null;
   }
-  console.log('data', data); 
 }
 
 document.getElementById('cancel').onclick = () => {

@@ -38,5 +38,126 @@
         "hex": "#F7F7F7"
       }
     ]
+  ],
+  "text": {
+    "headingStyles": [
+      {
+        "name": "Lead",
+        "styles": {
+          "fontFamily": "Roboto",
+          "fontWeight": 400,
+          "letterSpacing": 0,
+          "fontSize": 48,
+          "lineHeight": 64
+        },
+        "mobileOverrides": {
+          "fontSize": 28,
+          "lineHeight": 32
+        }
+      },
+      {
+        "name": "Head",
+        "styles": {
+          "fontFamily": "Roboto",
+          "fontWeight": 400,
+          "letterSpacing": 0,
+          "fontSize": 34,
+          "lineHeight": 40
+        },
+        "mobileOverrides": {
+          "fontSize": 24,
+          "lineHeight": 32
+        }
+      },
+      {
+        "name": "Sub",
+        "styles": {
+          "fontFamily": "Roboto",
+          "fontWeight": 400,
+          "letterSpacing": 0,
+          "fontSize": 24,
+          "lineHeight": 32
+        },
+        "mobileOverrides": {
+          "fontSize": 20,
+          "lineHeight": 28
+        }
+      },
+      {
+        "name": "Flag",
+        "styles": {
+          "fontFamily": "Roboto",
+          "fontWeight": 400,
+          "letterSpacing": 0,
+          "fontSize": 20,
+          "lineHeight": 28
+        },
+        "mobileOverrides": {
+          "fontSize": 18,
+          "lineHeight": 24
+        }
+      },
+      {
+        "name": "Brow",
+        "styles": {
+          "fontFamily": "Roboto",
+          "fontWeight": 700,
+          "letterSpacing": 0,
+          "fontSize": 18,
+          "lineHeight": 24
+        },
+        "mobileOverrides": {
+          "fontSize": 16,
+          "lineHeight": 24
+        }
+      }
+    ]
+  },
+  "buttons": [
+    {
+      "name": "Primary",
+      "default": {
+        "fontFamily": "Roboto",
+        "fontSize": 16,
+        "lineHeight": 24,
+        "background": "#0F70F0",
+        "paddingTop": 8,
+        "paddingLeft": 24,
+        "color": "#FFFFFF"
+      },
+      "hover": {
+        "background": "#0C5ECB"
+      },
+      "focus": {
+        "borderColor": "#0F70F0",
+        "opacity": 0.25,
+        "borderWidth": 3
+      },
+      "active": {}
+    },
+    {
+      "name": "Secondary",
+      "default": {
+        "fontFamily": "Roboto",
+        "fontSize": 16,
+        "lineHeight": 24,
+        "borderColor": "#0F70F0",
+        "borderWidth": 3,
+        "background": "#FFFFFF",
+        "paddingTop": 8,
+        "paddingLeft": 24,
+        "color": "#0F70F0"
+      },
+      "hover": {
+        "background": "#0C5ECB",
+        "color": "#FFFFFF"
+      },
+      "focus": {
+        "outlineColor": "#0F70F0",
+        "outlineWidth": 3,
+        "outlineOpacity": 0.25
+      },
+      "active": {}
+    }
   ]
 }

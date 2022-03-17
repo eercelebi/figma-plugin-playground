@@ -1,16 +1,17 @@
+import { hexToRgb } from "../Helpers/Helpers";
 export interface Color {
   name: string;
   hex: string;
 }
 
-interface FigmaColor {
-  r: number, 
-  g: number,
-  b: number
+interface Options {
+  colorRows: Array<Array<Color>>;
+  styleGuide: FrameNode
 }
 
 export class Colors {
 
+  private _styleGuide: FrameNode;
   private _colorRows: Array<Array<Color>>;
   private _colorsFrame: FrameNode;
   private _colorRectHeight: number;
@@ -19,22 +20,13 @@ export class Colors {
   private _colorRowMarginBottom: number;
   private _colorCommponentMarginRight: number;
 
-  static init(colorRows: Array<Array<Color>>) {
-    new this(colorRows)
+  static init(options) {
+    new this(options)
   }
 
-  // source: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb#answer-5624139
-  static hexToRgb(hex: string): FigmaColor|null {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16) / 255,
-      g: parseInt(result[2], 16) / 255,
-      b: parseInt(result[3], 16) / 255
-    } : null;
-  }
-
-  constructor(colorRows: Array<Array<Color>>) {
-    this._colorRows = colorRows;
+  constructor(options: Options) {
+    this._styleGuide = options.styleGuide;
+    this._colorRows = options.colorRows;
     this._colorsFrame = figma.createFrame();
     this._colorRectHeight = 60;
     this._colorRectWidth = 140;
@@ -48,8 +40,8 @@ export class Colors {
       style: 'Regular'
     }).then(() => {
       this.buildColorsFrame();
-      this.appendToCanvas();
-    })
+      this.appendToStyleGuide();
+    });
   }
 
   private buildColorsFrame() {
@@ -76,6 +68,7 @@ export class Colors {
       row.y = frameHeight;
       frameHeight += rowHeight + this._colorRowMarginBottom;
     }
+    this._colorsFrame.name = 'Colors';
     this._colorsFrame.layoutMode = 'VERTICAL';
     this._colorsFrame.counterAxisSizingMode = 'AUTO';
     this._colorsFrame.itemSpacing = this._colorRowMarginBottom;
@@ -93,7 +86,7 @@ export class Colors {
     textNode.fontSize = 16;
     textNode.lineHeight = { value: 24, unit: 'PIXELS' };
 
-    const rgb = Colors.hexToRgb(hex);
+    const rgb = hexToRgb(hex);
     const rectangleNode = figma.createRectangle();
     rectangleNode.resize(this._colorRectWidth, this._colorRectHeight);
     rectangleNode.fills = [{type: 'SOLID', color: rgb}];
@@ -108,7 +101,7 @@ export class Colors {
     return component;
   }
 
-  private appendToCanvas() {
-    figma.currentPage.appendChild(this._colorsFrame);
+  private appendToStyleGuide() {
+    this._styleGuide.appendChild(this._colorsFrame);
   }
 }
