@@ -1,4 +1,4 @@
-import { hexToRgb, styleGuideHeader } from "../Helpers/Helpers";
+import { createColumn, createRow, hexToRgb, styleGuideHeader } from "../Helpers/Helpers";
 export interface Color {
   name: string;
   hex: string;
@@ -17,7 +17,6 @@ export class Colors {
   private _colorRectHeight: number;
   private _colorRectWidth: number;
   private _colorRectMarginBottom: number;
-  private _colorRowMarginBottom: number;
   private _colorCommponentMarginRight: number;
 
   static init(options: Options) {
@@ -27,11 +26,10 @@ export class Colors {
   constructor(options: Options) {
     this._styleGuide = options.styleGuide;
     this._colorRows = options.colorRows;
-    this._colorsFrame = figma.createFrame();
+    this._colorsFrame = createColumn('Colors', 30);
     this._colorRectHeight = 60;
     this._colorRectWidth = 140;
     this._colorRectMarginBottom = 12;
-    this._colorRowMarginBottom = 30;
     this._colorCommponentMarginRight = 26;
     
     this.buildColorsFrame();
@@ -41,7 +39,7 @@ export class Colors {
   private buildColorsFrame() {
     this._colorsFrame.appendChild(styleGuideHeader('Colors'));
     for (const colorRow of this._colorRows) {
-      const row = figma.createFrame();
+      const row = createRow('Color row', this._colorCommponentMarginRight);
 
       let rowHeight = 0;
       let rowItemCount = 0;
@@ -54,16 +52,9 @@ export class Colors {
           rowItemCount++;
         }
       }
-      row.layoutMode = 'HORIZONTAL';
-      row.counterAxisSizingMode = 'AUTO';
-      row.itemSpacing = this._colorCommponentMarginRight;
 
       this._colorsFrame.appendChild(row);
     }
-    this._colorsFrame.name = 'Colors';
-    this._colorsFrame.layoutMode = 'VERTICAL';
-    this._colorsFrame.counterAxisSizingMode = 'AUTO';
-    this._colorsFrame.itemSpacing = this._colorRowMarginBottom;
   }
 
   /**

@@ -1,4 +1,9 @@
-import { paint, styleGuideHeader } from "../Helpers/Helpers";
+import { 
+  createColumn,
+  createRow,
+  paint,
+  styleGuideHeader
+} from "../Helpers/Helpers";
 
 export interface ButtonConfig {
   name: string;
@@ -27,13 +32,8 @@ export class Buttons {
   constructor(options: Options) {
     this._styleGuide = options.styleGuide;
     this._buttons = options.buttons;
-    this._buttonsFrame = figma.createFrame();
+    this._buttonsFrame = createColumn('Buttons', 40);
     this._typeOrder = ['default', 'hover', 'focus', 'active'];
-
-    this._buttonsFrame.name = 'Buttons';
-    this._buttonsFrame.layoutMode = 'VERTICAL';
-    this._buttonsFrame.counterAxisSizingMode = 'AUTO';
-    this._buttonsFrame.itemSpacing = 40;
 
     this.buildButtonsFrame();
     this.appendToStyleGuide();
@@ -42,11 +42,7 @@ export class Buttons {
   private buildButtonsFrame() {
     this._buttonsFrame.appendChild(styleGuideHeader('Buttons'));
     for (const button of this._buttons) {
-      const row = figma.createFrame();
-      row.name = button.name;
-      row.layoutMode = 'HORIZONTAL';
-      row.counterAxisSizingMode = 'AUTO';
-      row.itemSpacing = 175;
+      const row = createRow(button.name, 175);
       row.paddingTop = 16;
       row.paddingBottom = 16;
 
@@ -60,13 +56,10 @@ export class Buttons {
         Object.assign(styles, button[type]);
 
         const buttonComponent = figma.createComponent();
-        const content = figma.createFrame();
+        const content = createColumn(type, 0);
         const text = figma.createText();
         let outline = null;
 
-        content.name = type;
-        content.layoutMode = 'VERTICAL';
-        content.counterAxisSizingMode = 'AUTO';
         content.backgrounds = paint(styles.background);
         content.paddingTop = styles.paddingTop;
         content.paddingBottom = styles.paddingBottom ? styles.paddingBottom : styles.paddingTop;

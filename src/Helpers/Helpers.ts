@@ -32,7 +32,7 @@ export const paint = (color: string, opacity?: number): Array<Paint> => {
 
 export const styleGuideHeader = (heading: string): FrameNode => {
   const frame = figma.createFrame();
-  frame.name = heading;
+  frame.name = `${heading} Heading`;
   frame.layoutMode = 'VERTICAL';
   frame.counterAxisSizingMode = 'AUTO';
 

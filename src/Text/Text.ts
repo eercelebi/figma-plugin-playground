@@ -1,4 +1,4 @@
-import { styleGuideHeader } from "../Helpers/Helpers";
+import { createColumn, createRow, styleGuideHeader } from "../Helpers/Helpers";
 
 export interface HeadingConfig {
   name: string;
@@ -32,12 +32,7 @@ export class Text {
     this._styleGuide = options.styleGuide;
     this._headings = options.headings;
     this._body = options.body
-    this._textFrame = figma.createFrame();
-
-    this._textFrame.name = 'Texts';
-    this._textFrame.layoutMode = 'HORIZONTAL';
-    this._textFrame.counterAxisSizingMode = 'AUTO';
-    this._textFrame.itemSpacing = 80;
+    this._textFrame = createRow('Texts', 80);
 
     this.buildHeadingsFrame();
     this.buildBodyFrame();
@@ -45,21 +40,13 @@ export class Text {
   }
 
   private buildHeadingsFrame() {
-    const headingsFrame = figma.createFrame();
-    headingsFrame.name = 'Headings';
-    headingsFrame.layoutMode = 'VERTICAL';
-    headingsFrame.counterAxisSizingMode = 'AUTO';
-    headingsFrame.itemSpacing = 25;
+    const headingsFrame = createColumn('Headings', 25);
     headingsFrame.appendChild(styleGuideHeader('Headings'));
 
     for (const heading of this._headings) {
-      const row = figma.createFrame();
-      row.name = `Heading ${heading.name}`;
-      row.layoutMode = 'HORIZONTAL';
+      const row = createRow(`Heading ${heading.name}`, 175);
       row.primaryAxisAlignItems = 'SPACE_BETWEEN';
       row.counterAxisAlignItems = 'CENTER';
-      row.counterAxisSizingMode = 'AUTO';
-      row.itemSpacing = 175;
       row.paddingTop = 16;
       row.paddingBottom = 16;
 
@@ -76,18 +63,11 @@ export class Text {
   }
 
   private buildBodyFrame() {
-    const bodyFrame = figma.createFrame();
-    bodyFrame.name = 'Body Styles';
-    bodyFrame.layoutMode = 'VERTICAL';
-    bodyFrame.counterAxisSizingMode = 'AUTO';
-    bodyFrame.itemSpacing = 25;
+    const bodyFrame = createColumn('Body Styles', 25);
     bodyFrame.appendChild(styleGuideHeader('Body Styles'));
 
     for (const body of  this._body) {
-      const row = figma.createFrame();
-      row.name = `Body ${body.name}`;
-      row.layoutMode = 'HORIZONTAL';
-      row.counterAxisSizingMode = 'AUTO';
+      const row = createRow(`Body ${body.name}`, 0);
       row.paddingTop = 16;
       row.paddingBottom = 16;
 
