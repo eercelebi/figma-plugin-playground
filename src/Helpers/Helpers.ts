@@ -27,3 +27,36 @@ export const paint = (color: string, opacity?: number): Array<Paint> => {
     }
   ];
 }
+
+export const styleGuideHeader = (heading: string): FrameNode => {
+  const frame = figma.createFrame();
+  frame.name = heading;
+  frame.layoutMode = 'VERTICAL';
+  frame.counterAxisSizingMode = 'AUTO';
+
+  const text = figma.createText();
+  text.fontName = {
+    family: 'Roboto',
+    style: 'Bold'
+  }
+  text.characters = heading;
+  text.textCase = 'UPPER';
+  text.letterSpacing = {
+    value: 2,
+    unit: 'PIXELS'
+  }
+  text.fontSize = 32;
+  text.lineHeight = {
+    value: 64,
+    unit: 'PIXELS'
+  }
+
+  const underline = figma.createRectangle();
+  underline.resize(500, 3);
+  underline.fills = paint('#CCCCCC');
+
+  frame.appendChild(text);
+  frame.appendChild(underline);
+
+  return frame;
+}

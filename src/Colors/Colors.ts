@@ -1,4 +1,4 @@
-import { hexToRgb } from "../Helpers/Helpers";
+import { hexToRgb, styleGuideHeader } from "../Helpers/Helpers";
 export interface Color {
   name: string;
   hex: string;
@@ -20,7 +20,7 @@ export class Colors {
   private _colorRowMarginBottom: number;
   private _colorCommponentMarginRight: number;
 
-  static init(options) {
+  static init(options: Options) {
     new this(options)
   }
 
@@ -33,19 +33,13 @@ export class Colors {
     this._colorRectMarginBottom = 12;
     this._colorRowMarginBottom = 30;
     this._colorCommponentMarginRight = 26;
-
-    // font must be loaded before any attempt at modifying text nodes.
-    figma.loadFontAsync({
-      family: 'Roboto',
-      style: 'Regular'
-    }).then(() => {
-      this.buildColorsFrame();
-      this.appendToStyleGuide();
-    });
+    
+    this.buildColorsFrame();
+    this.appendToStyleGuide();
   }
 
   private buildColorsFrame() {
-    let frameHeight = 0;
+    this._colorsFrame.appendChild(styleGuideHeader('Colors'));
     for (const colorRow of this._colorRows) {
       const row = figma.createFrame();
 
@@ -65,8 +59,6 @@ export class Colors {
       row.itemSpacing = this._colorCommponentMarginRight;
 
       this._colorsFrame.appendChild(row);
-      row.y = frameHeight;
-      frameHeight += rowHeight + this._colorRowMarginBottom;
     }
     this._colorsFrame.name = 'Colors';
     this._colorsFrame.layoutMode = 'VERTICAL';

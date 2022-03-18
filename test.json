@@ -39,80 +39,78 @@
       }
     ]
   ],
-  "text": {
-    "headingStyles": [
-      {
-        "name": "Lead",
-        "styles": {
-          "fontFamily": "Roboto",
-          "fontWeight": 400,
-          "letterSpacing": 0,
-          "fontSize": 48,
-          "lineHeight": 64
-        },
-        "mobileOverrides": {
-          "fontSize": 28,
-          "lineHeight": 32
-        }
+  "headings": [
+    {
+      "name": "Lead",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "fontSize": 48,
+        "lineHeight": 64
       },
-      {
-        "name": "Head",
-        "styles": {
-          "fontFamily": "Roboto",
-          "fontWeight": 400,
-          "letterSpacing": 0,
-          "fontSize": 34,
-          "lineHeight": 40
-        },
-        "mobileOverrides": {
-          "fontSize": 24,
-          "lineHeight": 32
-        }
-      },
-      {
-        "name": "Sub",
-        "styles": {
-          "fontFamily": "Roboto",
-          "fontWeight": 400,
-          "letterSpacing": 0,
-          "fontSize": 24,
-          "lineHeight": 32
-        },
-        "mobileOverrides": {
-          "fontSize": 20,
-          "lineHeight": 28
-        }
-      },
-      {
-        "name": "Flag",
-        "styles": {
-          "fontFamily": "Roboto",
-          "fontWeight": 400,
-          "letterSpacing": 0,
-          "fontSize": 20,
-          "lineHeight": 28
-        },
-        "mobileOverrides": {
-          "fontSize": 18,
-          "lineHeight": 24
-        }
-      },
-      {
-        "name": "Brow",
-        "styles": {
-          "fontFamily": "Roboto",
-          "fontWeight": 700,
-          "letterSpacing": 0,
-          "fontSize": 18,
-          "lineHeight": 24
-        },
-        "mobileOverrides": {
-          "fontSize": 16,
-          "lineHeight": 24
-        }
+      "mobileOverrides": {
+        "fontSize": 28,
+        "lineHeight": 32
       }
-    ]
-  },
+    },
+    {
+      "name": "Head",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "fontSize": 34,
+        "lineHeight": 40
+      },
+      "mobileOverrides": {
+        "fontSize": 24,
+        "lineHeight": 32
+      }
+    },
+    {
+      "name": "Sub",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "fontSize": 24,
+        "lineHeight": 32
+      },
+      "mobileOverrides": {
+        "fontSize": 20,
+        "lineHeight": 28
+      }
+    },
+    {
+      "name": "Flag",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontWeight": 400,
+        "letterSpacing": 0,
+        "fontSize": 20,
+        "lineHeight": 28
+      },
+      "mobileOverrides": {
+        "fontSize": 18,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Brow",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontWeight": 700,
+        "letterSpacing": 0,
+        "fontSize": 18,
+        "lineHeight": 24
+      },
+      "mobileOverrides": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    }
+  ],
   "buttons": [
     {
       "name": "Primary",

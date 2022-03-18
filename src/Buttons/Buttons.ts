@@ -1,4 +1,4 @@
-import { paint } from "../Helpers/Helpers";
+import { paint, styleGuideHeader } from "../Helpers/Helpers";
 
 export interface ButtonConfig {
   name: string;
@@ -20,7 +20,7 @@ export class Buttons {
   private _buttonsFrame: FrameNode;
   private _typeOrder: Array<string>;
 
-  static init(options) {
+  static init(options: Options) {
     new this(options);
   }
 
@@ -35,16 +35,12 @@ export class Buttons {
     this._buttonsFrame.counterAxisSizingMode = 'AUTO';
     this._buttonsFrame.itemSpacing = 40;
 
-    figma.loadFontAsync({
-      family: 'Roboto',
-      style: 'Regular'
-    }).then(() => {
-      this.buildButtonsFrame();
-      this.appendToStyleGuide();
-    });
+    this.buildButtonsFrame();
+    this.appendToStyleGuide();
   }
 
   private buildButtonsFrame() {
+    this._buttonsFrame.appendChild(styleGuideHeader('Buttons'));
     for (const button of this._buttons) {
       const row = figma.createFrame();
       row.name = button.name;
