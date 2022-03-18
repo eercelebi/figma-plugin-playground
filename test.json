@@ -111,6 +111,32 @@
       }
     }
   ],
+  "body": [
+    {
+      "name": "Large",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontSize": 18,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Normal",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    },
+    {
+      "name": "Small",
+      "styles": {
+        "fontFamily": "Roboto",
+        "fontSize": 14,
+        "lineHeight": 22
+      }
+    }
+  ],
   "buttons": [
     {
       "name": "Primary",

@@ -7,14 +7,14 @@ export interface HeadingConfig {
 }
 
 export interface TextConfig {
-  names: string;
+  name: string;
   styles: any;
 }
 
 interface Options {
   styleGuide: FrameNode;
   headings: Array<HeadingConfig>;
-  texts?: Array<TextConfig>;
+  body: Array<TextConfig>;
 }
 
 export class Text {
@@ -31,7 +31,7 @@ export class Text {
   constructor(options: Options) {
     this._styleGuide = options.styleGuide;
     this._headings = options.headings;
-    this._body = options.texts
+    this._body = options.body
     this._textFrame = figma.createFrame();
 
     this._textFrame.name = 'Texts';
@@ -40,6 +40,7 @@ export class Text {
     this._textFrame.itemSpacing = 80;
 
     this.buildHeadingsFrame();
+    this.buildBodyFrame();
     this.appendToStyleGuide();
   }
 
@@ -72,6 +73,32 @@ export class Text {
       headingsFrame.appendChild(row);
     }
     this._textFrame.appendChild(headingsFrame);
+  }
+
+  private buildBodyFrame() {
+    const bodyFrame = figma.createFrame();
+    bodyFrame.name = 'Body Styles';
+    bodyFrame.layoutMode = 'VERTICAL';
+    bodyFrame.counterAxisSizingMode = 'AUTO';
+    bodyFrame.itemSpacing = 25;
+    bodyFrame.appendChild(styleGuideHeader('Body Styles'));
+
+    for (const body of  this._body) {
+      const row = figma.createFrame();
+      row.name = `Body ${body.name}`;
+      row.layoutMode = 'HORIZONTAL';
+      row.counterAxisSizingMode = 'AUTO';
+      row.paddingTop = 16;
+      row.paddingBottom = 16;
+
+      const { styles } = body;
+
+      const bodyText = this.buildTextNode(styles, body.name);
+
+      row.appendChild(bodyText);
+      bodyFrame.appendChild(row);
+    }
+    this._textFrame.appendChild(bodyFrame);
   }
 
   private buildTextNode(styles: any, name: string, isDesktop?: boolean): TextNode {
