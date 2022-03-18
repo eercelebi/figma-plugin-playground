@@ -4,6 +4,8 @@ interface FigmaColor {
   b: number;
 }
 
+type LayoutMode = "NONE" | "HORIZONTAL" | "VERTICAL";
+
 // source: https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb#answer-5624139
 export const hexToRgb = (hex: string): FigmaColor|null => {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -59,4 +61,21 @@ export const styleGuideHeader = (heading: string): FrameNode => {
   frame.appendChild(underline);
 
   return frame;
+}
+
+const createLayout = (name: string, itemSpacing: number, layoutMode: LayoutMode): FrameNode => {
+  const layout = figma.createFrame();
+  layout.name = name;
+  layout.layoutMode = layoutMode;
+  layout.counterAxisSizingMode = 'AUTO';
+  layout.itemSpacing = itemSpacing
+  return layout;
+}
+
+export const createRow = (name: string, itemSpacing: number): FrameNode => {
+  return createLayout(name, itemSpacing, 'HORIZONTAL');
+}
+
+export const createColumn = (name: string, itemSpacing: number): FrameNode => {
+  return createLayout(name, itemSpacing, 'VERTICAL');
 }

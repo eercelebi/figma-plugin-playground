@@ -65,8 +65,8 @@ export class Text {
 
       const desktopStyles = heading.styles;
 
-      const desktopHeading = this.buildTextNode(desktopStyles, heading.name, true);
-      const mobileHeading = this.buildTextNode(Object.assign(desktopStyles, heading.mobileOverrides), heading.name);
+      const desktopHeading = this.buildTextNode(desktopStyles, heading.name, `${heading.name}/D`);
+      const mobileHeading = this.buildTextNode(Object.assign(desktopStyles, heading.mobileOverrides), heading.name, `${heading.name}/P`);
 
       row.appendChild(desktopHeading);
       row.appendChild(mobileHeading);
@@ -93,7 +93,7 @@ export class Text {
 
       const { styles } = body;
 
-      const bodyText = this.buildTextNode(styles, body.name);
+      const bodyText = this.buildTextNode(styles, body.name, `Body/${body.name}`);
 
       row.appendChild(bodyText);
       bodyFrame.appendChild(row);
@@ -101,9 +101,9 @@ export class Text {
     this._textFrame.appendChild(bodyFrame);
   }
 
-  private buildTextNode(styles: any, name: string, isDesktop?: boolean): TextNode {
+  private buildTextNode(styles: any, name: string, characters: string): TextNode {
     const text = figma.createText();
-    text.characters = `${name}/${isDesktop ? 'D' : 'P'}`;
+    text.characters = characters;
     text.fontSize = styles.fontSize;
     if (styles.fontWeight == 700) {
       text.fontName = {
