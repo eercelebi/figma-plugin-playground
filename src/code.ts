@@ -44,7 +44,7 @@ figma.ui.onmessage = async msg => {
     }
 
     figma.currentPage.appendChild(styleGuide);
+  } else if (msg.type == 'close') {
+    figma.closePlugin();
   }
-
-  // figma.closePlugin();
 };
