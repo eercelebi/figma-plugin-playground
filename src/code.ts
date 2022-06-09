@@ -1,11 +1,14 @@
 import { ButtonConfig, Buttons } from "./Buttons/Buttons";
 import { Color, Colors } from "./Colors/Colors";
+import { DocumentStyles } from "./DocumentStyles/DocumentStyles";
 import { HeadingConfig, Text, TextConfig } from "./Text/Text";
 
 figma.showUI(__html__);
 
 figma.ui.onmessage = async msg => {
+
   if (msg.type === 'generate') {
+    const { data } = msg;
 
     await figma.loadFontAsync({
       family: 'Roboto',
@@ -15,8 +18,6 @@ figma.ui.onmessage = async msg => {
       family: 'Roboto',
       style: 'Bold'
     });
-    const { data } = msg;
-
     const styleGuide = figma.createFrame();
     styleGuide.name = 'Style Guide';
     styleGuide.layoutMode = 'VERTICAL';
@@ -44,6 +45,17 @@ figma.ui.onmessage = async msg => {
     }
 
     figma.currentPage.appendChild(styleGuide);
+  } else if (msg.type = 'updateStyles') {
+    await figma.loadFontAsync({
+      family: 'Roboto',
+      style: 'Regular'
+    })
+    await figma.loadFontAsync({
+      family: 'Roboto',
+      style: 'Bold'
+    });
+    const { data }  = msg
+    new DocumentStyles(data);
   } else if (msg.type == 'close') {
     figma.closePlugin();
   }

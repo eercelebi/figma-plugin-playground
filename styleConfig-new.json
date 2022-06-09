@@ -1,0 +1,147 @@
+{
+  "colors": {
+    "Main": {
+      "Primary": {
+        "hex": "#6450C0"
+      },
+      "Secondary": {
+        "hex": "#19C6D5"
+      }
+    },
+    "Grayscale": {
+      "GrayLightest": {
+        "hex": "#A09FB1"
+      },
+      "GrayLight": {
+        "hex": "#76748E"
+      },
+      "Gray": {
+        "hex": "#4C4B60"
+      },
+      "GrayDark": {
+        "hex": "#333333"
+      },
+      "White": {
+        "hex": "#FFFFFF"
+      },
+      "Black": {
+        "hex": "#000000"
+      }
+    }
+  },
+  "headings": {
+    "Lead": {
+      "D": {
+        "fontSize": 40,
+        "lineHeight": 48,
+        "fontWeight": 700
+      },
+      "P": {
+        "fontSize": 32,
+        "lineHeight": 38,
+        "fontWeight": 700
+      }
+    },
+    "Head": {
+      "D": {
+        "fontSize": 28,
+        "lineHeight": 32,
+        "textCase": "UPPER",
+        "fontWeight": 700
+      },
+      "P": {
+        "fontSize": 22,
+        "lineHeight": 26,
+        "fontWeight": 700
+      }
+    },
+    "Sub": {
+      "D": {
+        "fontSize": 24,
+        "lineHeight": 32,
+        "fontWeight": 700
+      },
+      "P": {
+        "fontSize": 20,
+        "lineHeight": 28,
+        "fontWeight": 700
+      }
+    },
+    "Flag": {
+      "D": {
+        "fontSize": 20,
+        "lineHeight": 28,
+        "fontWeight": 700
+      },
+      "P": {
+        "fontSize": 18,
+        "lineHeight": 24,
+        "fontWeight": 700
+      }
+    },
+    "Brow": {
+      "D": {
+        "fontSize": 18,
+        "lineHeight": 24,
+        "fontWeight": 700
+      },
+      "P": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 700
+      }
+    }
+  },
+  "bodies": {
+    "Body": {
+      "Small": {
+        "Normal": {
+          "fontSize": 12,
+          "lineHeight": 18
+        },
+        "Bold": {
+          "fontSize": 12,
+          "lineHeight": 18,
+          "fontWeight": 700
+        },
+        "Link": {
+          "fontSize": 12,
+          "lineHeight": 18,
+          "textDecoration": "UNDERLINE"
+        }
+      },
+      "Base": {
+        "Normal": {
+          "fontSize": 14,
+          "lineHeight": 20
+        },
+        "Bold": {
+          "fontSize": 14,
+          "lineHeight": 20,
+          "fontWeight": 700
+        },
+        "Link": {
+          "fontSize": 14,
+          "lineHeight": 20,
+          "textDecoration": "UNDERLINE"
+        }
+      },
+      "Large": {
+        "Normal": {
+          "fontSize": 16,
+          "lineHeight": 24
+        },
+        "Bold": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "fontWeight": 700
+        },
+        "Link": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "textDecoration": "UNDERLINE"
+        }
+      }
+    }
+  }
+}

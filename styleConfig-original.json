@@ -1,0 +1,137 @@
+{
+  "colors": {
+    "Main": {
+      "Primary": {
+        "hex": "#0F70F0"
+      },
+      "Secondary": {
+        "hex": "#0C5ECB"
+      }
+    },
+    "Grayscale": {
+      "GrayLightest": {
+        "hex": "#F7F7F7"
+      },
+      "GrayLight": {
+        "hex": "#EDEDED"
+      },
+      "Gray": {
+        "hex": "#CCCCCC"
+      },
+      "GrayDark": {
+        "hex": "#767676"
+      },
+      "White": {
+        "hex": "#FFFFFF"
+      },
+      "Black": {
+        "hex": "#000000"
+      }
+    }
+  },
+  "headings": {
+    "Lead": {
+      "D": {
+        "fontSize": 48,
+        "lineHeight": 64
+      },
+      "P": {
+        "fontSize": 28,
+        "lineHeight": 32
+      }
+    },
+    "Head": {
+      "D": {
+        "fontSize": 34,
+        "lineHeight": 40
+      },
+      "P": {
+        "fontSize": 24,
+        "lineHeight": 32
+      }
+    },
+    "Sub": {
+      "D": {
+        "fontSize": 24,
+        "lineHeight": 32
+      },
+      "P": {
+        "fontSize": 20,
+        "lineHeight": 28
+      }
+    },
+    "Flag": {
+      "D": {
+        "fontSize": 20,
+        "lineHeight": 28
+      },
+      "P": {
+        "fontSize": 18,
+        "lineHeight": 24
+      }
+    },
+    "Brow": {
+      "D": {
+        "fontSize": 18,
+        "lineHeight": 24,
+        "fontWeight": 700
+      },
+      "P": {
+        "fontSize": 16,
+        "lineHeight": 24
+      }
+    }
+  },
+  "bodies": {
+    "Body": {
+      "Small": {
+        "Normal": {
+          "fontSize": 14,
+          "lineHeight": 22
+        },
+        "Bold": {
+          "fontSize": 14,
+          "lineHeight": 22,
+          "fontWeight": 700
+        },
+        "Link": {
+          "fontSize": 14,
+          "lineHeight": 22,
+          "textDecoration": "UNDERLINE"
+        }
+      },
+      "Base": {
+        "Normal": {
+          "fontSize": 16,
+          "lineHeight": 24
+        },
+        "Bold": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "fontWeight": 700
+        },
+        "Link": {
+          "fontSize": 16,
+          "lineHeight": 24,
+          "textDecoration": "UNDERLINE"
+        }
+      },
+      "Large": {
+        "Normal": {
+          "fontSize": 18,
+          "lineHeight": 24
+        },
+        "Bold": {
+          "fontSize": 18,
+          "lineHeight": 24,
+          "fontWeight": 700
+        },
+        "Link": {
+          "fontSize": 18,
+          "lineHeight": 24,
+          "textDecoration": "UNDERLINE"
+        }
+      }
+    }
+  }
+}
